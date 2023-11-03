@@ -1,0 +1,117 @@
+* { 
+	margin: 0px; 
+	padding: 0px; 
+}
+body { 
+	text-align: center; 
+	padding-top:20px; 
+	background-image:url("../imgs/old_map.png");
+	
+
+}
+#page { 
+	width:90%; 
+	margin-right: 5%;
+	margin-left: 5%; 
+	text-align: left;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: "header header header"
+						"nav nav nav"
+						"section section section"
+						"footer footer footer";
+}
+div > header {
+	font-family:Courier ;
+	font-size:1.1em; 
+	color: white;
+	border-bottom:6px black solid; 
+	background-color: #313B44; 
+	grid-area: header;
+}
+h1{
+	background-image:url("../imgs/fotomia.png");
+	background-repeat:no-repeat;
+	background-position:25px center;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:100px;
+	padding-right:100px;
+}
+nav{
+	font-family:Courier;
+	font-size:1.4em;
+	color:silver;
+	text-align:center;
+	background-image:url("../imgs/red015.jpg");
+	grid-area: nav;
+}
+
+nav ul li{
+	padding:80px 0px 0px 0px;
+	margin:0px 100px 20px 100px;
+	list-style:none;
+	display:inline-block;
+	text-align:center;
+	cursor:default;
+}
+nav #estudios{
+	background-image:url("../imgs/estudios.png");
+	background-repeat:no-repeat;
+	background-position:center 10px;
+}
+nav #conocimientos{
+	background-image:url("../imgs/conocimientos.png");
+	background-repeat:no-repeat;
+	background-position:center 10px;
+}
+nav #contacto{
+	background-image:url("../imgs/contacto.png");
+	background-repeat:no-repeat;
+	background-position:center 10px;
+}
+nav ul li a{
+	color:orange;
+	text-decoration:none;
+}
+nav ul li a:hover{
+	color:white;
+}
+
+section{
+	font-family:verdana;
+	font-size:0.8em;
+	background-image:url("../imgs/lgrey008.jpg");
+	display:grid;
+	grid-area: section;
+	grid-template-columns: repeat(3,1fr);
+	
+}
+article{
+	width:75%;
+	border:1px;
+	border-color:lightgrey;
+	border-style:solid;
+	background-color:white;
+	text-align:center;
+	line-height:1.8em;
+	padding:5px 5px 22px 5px;
+	margin:30px;
+}
+article > header{
+	border-bottom:1px solid #999999;
+	color:red;
+}
+h2{
+	padding:10px;
+	font-size:1.2em;
+}
+footer{
+	color:white;
+	font-size:0.7em;
+	text-align:center;
+	background-color:#313B44;
+	border-top:6px solid black;
+	padding:15px 0px;
+	grid-area: footer;
+}
