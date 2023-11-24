@@ -1,19 +1,23 @@
-name: Upload Website
+name: Subir a S3 en cada push
 
 on:
   push:
     branches:
-    - master
+      - main 
 
 jobs:
-  deploy:
+  upload_to_s3:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@master
-    - uses: jakejarvis/s3-sync-action@master
+    - name: Checkout del código
+      uses: actions/checkout@v2
+
+    - name: Configurar AWS CLI
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        args: --acl public-read --follow-symlinks --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: Subir a S3
+      run: aws s3 sync C:\Users\josperchi2\Documents\daw\Nueva%20carpeta\cv s3://joseperdomobucket
